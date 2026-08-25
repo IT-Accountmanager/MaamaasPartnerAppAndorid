@@ -1,0 +1,723 @@
+
+
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;<manifest xmlns:android="http://schemas.android.com/apk/res/android"&ndash;&gt;&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;    xmlns:tools="http://schemas.android.com/tools">&ndash;&gt;&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+
+
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;    <uses-permission android:name="android.permission.INTERNET" />&ndash;&gt;&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />&ndash;&gt;&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+
+
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />&ndash;&gt;&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />&ndash;&gt;&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+
+
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;    <uses-permission&ndash;&gt;&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;        android:name="android.permission.CALL_PHONE"&ndash;&gt;&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;        tools:ignore="PermissionImpliesUnsupportedChromeOsHardware" />&ndash;&gt;&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+
+
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />&ndash;&gt;&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+
+
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />&ndash;&gt;&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+
+
+
+
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;    <application&ndash;&gt;&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;        android:label="maamaas partner"&ndash;&gt;&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;        android:name="android.app.Application"&ndash;&gt;&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;        android:icon="@mipmap/ic_launcher">&ndash;&gt;&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+
+
+
+
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;        <activity&ndash;&gt;&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;            android:name=".MainActivity"&ndash;&gt;&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;            android:exported="true"&ndash;&gt;&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;            android:launchMode="singleTop"&ndash;&gt;&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;            android:theme="@style/LaunchTheme">&ndash;&gt;&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;            <intent-filter>&ndash;&gt;&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;                <action android:name="android.intent.action.MAIN"/>&ndash;&gt;&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;                <category android:name="android.intent.category.LAUNCHER"/>&ndash;&gt;&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;            </intent-filter>&ndash;&gt;&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+
+
+
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;            <intent-filter android:autoVerify="true">&ndash;&gt;&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;                <action android:name="android.intent.action.VIEW" />&ndash;&gt;&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;                <category android:name="android.intent.category.DEFAULT" />&ndash;&gt;&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;                <category android:name="android.intent.category.BROWSABLE" />&ndash;&gt;&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;                <data&ndash;&gt;&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;                    android:scheme="https"&ndash;&gt;&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;                    android:host="applink.maamaas.com"&ndash;&gt;&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;                    android:pathPrefix="/vendor" />&ndash;&gt;&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;            </intent-filter>&ndash;&gt;&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;        </activity>&ndash;&gt;&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+
+
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;        <meta-data&ndash;&gt;&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;            android:name="flutterEmbedding"&ndash;&gt;&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;            android:value="2" />&ndash;&gt;&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+
+
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;        <meta-data&ndash;&gt;&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;            android:name="com.google.android.geo.API_KEY"&ndash;&gt;&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;            android:value="AIzaSyDAiwcYpCZHuH7AYvw1o7tYGK7yZTk4qHs"/>&ndash;&gt;&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;        <meta-data&ndash;&gt;&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;            android:name="com.google.firebase.messaging.default_notification_channel_id"&ndash;&gt;&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;            android:value="school_bell_channel"/>&ndash;&gt;&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+
+
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;    </application>&ndash;&gt;&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+
+
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;    <queries>&ndash;&gt;&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;        <intent>&ndash;&gt;&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;            <action android:name="android.intent.action.PROCESS_TEXT"/>&ndash;&gt;&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;            <data android:mimeType="text/plain"/>&ndash;&gt;&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;        </intent>&ndash;&gt;&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;    </queries>&ndash;&gt;&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+
+
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;</manifest>&ndash;&gt;&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+
+
+
+
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;<manifest xmlns:android="http://schemas.android.com/apk/res/android"&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;    xmlns:tools="http://schemas.android.com/tools">&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;    <uses-permission android:name="android.permission.INTERNET" />&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;    <uses-permission android:name="android.permission.CALL_PHONE" />&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK" />&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;    <application&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;        android:label="maamaas partner"&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;        android:name="android.app.Application"&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;        android:icon="@mipmap/ic_launcher">&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;        <activity&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;            android:name=".MainActivity"&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;            android:exported="true"&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;            android:launchMode="singleTop"&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;            android:theme="@style/LaunchTheme">&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;            <intent-filter>&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;                <action android:name="android.intent.action.MAIN"/>&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;                <category android:name="android.intent.category.LAUNCHER"/>&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;            </intent-filter>&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;            <intent-filter android:autoVerify="true">&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;                <action android:name="android.intent.action.VIEW" />&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;                <category android:name="android.intent.category.DEFAULT" />&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;                <category android:name="android.intent.category.BROWSABLE" />&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;                <data&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;                    android:scheme="https"&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;                    android:host="applink.maamaas.com"&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;                    android:pathPrefix="/vendor" />&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;            </intent-filter>&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;        </activity>&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;        &lt;!&ndash; FCM receiver &ndash;&gt;&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;        <service&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;            android:name=".MyFirebaseMessagingService"&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;            android:exported="false">&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;            <intent-filter>&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;                <action android:name="com.google.firebase.MESSAGING_EVENT" />&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;            </intent-filter>&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;        </service>&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;        &lt;!&ndash; Order ringtone service &ndash;&gt;&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;        <service&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;            android:name=".OrderRingService"&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;            android:enabled="true"&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;            android:exported="false"&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;            android:foregroundServiceType="mediaPlayback" />&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;        <meta-data&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;            android:name="flutterEmbedding"&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;            android:value="2" />&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;        <meta-data&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;            android:name="com.google.android.geo.API_KEY"&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;            android:value="YOUR_API_KEY"/>&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;        <meta-data&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;            android:name="com.google.firebase.messaging.default_notification_channel_id"&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;            android:value="vendor_order_channel_v2"/>&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;    </application>&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;</manifest>&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+
+
+
+
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;<manifest&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;    xmlns:android="http://schemas.android.com/apk/res/android"&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;    xmlns:tools="http://schemas.android.com/tools">&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;    &lt;!&ndash; Network &ndash;&gt;&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;    <uses-permission android:name="android.permission.INTERNET" />&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;    &lt;!&ndash; Location &ndash;&gt;&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;    &lt;!&ndash; Phone &ndash;&gt;&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;    <uses-permission android:name="android.permission.CALL_PHONE" />&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;    &lt;!&ndash; Android 13+ notifications &ndash;&gt;&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;    &lt;!&ndash; Foreground service &ndash;&gt;&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;    &lt;!&ndash; Android 14+ media playback foreground service &ndash;&gt;&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;    <uses-permission&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;        android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK" />&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+
+
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;    <application&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;        android:name="android.app.Application"&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;        android:label="maamaas partner"&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;        android:icon="@mipmap/ic_launcher">&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+
+
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;        &lt;!&ndash; ================================================= &ndash;&gt;&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;        &lt;!&ndash; MAIN ACTIVITY                                    &ndash;&gt;&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;        &lt;!&ndash; ================================================= &ndash;&gt;&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;        <activity&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;            android:name=".MainActivity"&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;            android:exported="true"&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;            android:launchMode="singleTop"&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;            android:theme="@style/LaunchTheme">&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;            <intent-filter>&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;                <action android:name="android.intent.action.MAIN" />&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;                <category android:name="android.intent.category.LAUNCHER" />&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;            </intent-filter>&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+
+
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;            &lt;!&ndash; Deep link &ndash;&gt;&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;            <intent-filter android:autoVerify="true">&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;                <action android:name="android.intent.action.VIEW" />&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;                <category android:name="android.intent.category.DEFAULT" />&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;                <category android:name="android.intent.category.BROWSABLE" />&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;                <data&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;                    android:scheme="https"&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;                    android:host="applink.maamaas.com"&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;                    android:pathPrefix="/vendor" />&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;            </intent-filter>&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;        </activity>&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+
+
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;        &lt;!&ndash; ================================================= &ndash;&gt;&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;        &lt;!&ndash; FIREBASE MESSAGING SERVICE                       &ndash;&gt;&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;        &lt;!&ndash; ================================================= &ndash;&gt;&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;        <service&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;            android:name=".MyFirebaseMessagingService"&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;            android:enabled="true"&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;            android:exported="false">&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;            <intent-filter>&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;                <action&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;                    android:name="com.google.firebase.MESSAGING_EVENT" />&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;            </intent-filter>&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;        </service>&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+
+
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;        &lt;!&ndash; ================================================= &ndash;&gt;&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;        &lt;!&ndash; ORDER RING FOREGROUND SERVICE                    &ndash;&gt;&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;        &lt;!&ndash; ================================================= &ndash;&gt;&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;        <service&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;            android:name=".OrderRingService"&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;            android:enabled="true"&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;            android:exported="false"&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;            android:stopWithTask="false"&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;            android:foregroundServiceType="mediaPlayback" />&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+
+
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;        &lt;!&ndash; ================================================= &ndash;&gt;&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;        &lt;!&ndash; FLUTTER                                          &ndash;&gt;&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;        &lt;!&ndash; ================================================= &ndash;&gt;&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;        <meta-data&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;            android:name="flutterEmbedding"&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;            android:value="2" />&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+
+
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;        &lt;!&ndash; ================================================= &ndash;&gt;&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;        &lt;!&ndash; GOOGLE MAPS                                      &ndash;&gt;&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;        &lt;!&ndash; ================================================= &ndash;&gt;&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;        <meta-data&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;            android:name="com.google.android.geo.API_KEY"&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;            android:value="YOUR_API_KEY" />&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+
+
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;        &lt;!&ndash; ================================================= &ndash;&gt;&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;        &lt;!&ndash; FIREBASE DEFAULT NOTIFICATION CHANNEL           &ndash;&gt;&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;        &lt;!&ndash; ================================================= &ndash;&gt;&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;        <meta-data&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;            android:name="com.google.firebase.messaging.default_notification_channel_id"&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;            android:value="vendor_order_channel_v2" />&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;    </application>&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;</manifest>&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+
+
+
+
+<!--&lt;!&ndash;&lt;!&ndash;<manifest&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;    xmlns:android="http://schemas.android.com/apk/res/android"&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;    xmlns:tools="http://schemas.android.com/tools">&ndash;&gt;&ndash;&gt;-->
+
+<!--&lt;!&ndash;&lt;!&ndash;    &lt;!&ndash; Network &ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;    <uses-permission android:name="android.permission.INTERNET" />&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />&ndash;&gt;&ndash;&gt;-->
+
+<!--&lt;!&ndash;&lt;!&ndash;    &lt;!&ndash; Location &ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />&ndash;&gt;&ndash;&gt;-->
+
+<!--&lt;!&ndash;&lt;!&ndash;    &lt;!&ndash; Phone &ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;    <uses-permission android:name="android.permission.CALL_PHONE" />&ndash;&gt;&ndash;&gt;-->
+
+<!--&lt;!&ndash;&lt;!&ndash;    &lt;!&ndash; Android 13+ notifications &ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />&ndash;&gt;&ndash;&gt;-->
+
+<!--&lt;!&ndash;&lt;!&ndash;    &lt;!&ndash; Foreground service &ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />&ndash;&gt;&ndash;&gt;-->
+
+<!--&lt;!&ndash;&lt;!&ndash;    &lt;!&ndash; Android 14+ media playback foreground service &ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;    <uses-permission&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;        android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK" />&ndash;&gt;&ndash;&gt;-->
+
+
+<!--&lt;!&ndash;&lt;!&ndash;    <application&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;        android:name="android.app.Application"&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;        android:label="maamaas partner"&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;        android:icon="@mipmap/ic_launcher">&ndash;&gt;&ndash;&gt;-->
+
+
+<!--&lt;!&ndash;&lt;!&ndash;        &lt;!&ndash; Main Flutter Activity &ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;        <activity&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;            android:name=".MainActivity"&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;            android:exported="true"&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;            android:launchMode="singleTop"&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;            android:theme="@style/LaunchTheme">&ndash;&gt;&ndash;&gt;-->
+
+<!--&lt;!&ndash;&lt;!&ndash;            <intent-filter>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                <action android:name="android.intent.action.MAIN" />&ndash;&gt;&ndash;&gt;-->
+
+<!--&lt;!&ndash;&lt;!&ndash;                <category&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                    android:name="android.intent.category.LAUNCHER" />&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;            </intent-filter>&ndash;&gt;&ndash;&gt;-->
+
+
+<!--&lt;!&ndash;&lt;!&ndash;            &lt;!&ndash; Deep Link &ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;            <intent-filter android:autoVerify="true">&ndash;&gt;&ndash;&gt;-->
+
+<!--&lt;!&ndash;&lt;!&ndash;                <action android:name="android.intent.action.VIEW" />&ndash;&gt;&ndash;&gt;-->
+
+<!--&lt;!&ndash;&lt;!&ndash;                <category&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                    android:name="android.intent.category.DEFAULT" />&ndash;&gt;&ndash;&gt;-->
+
+<!--&lt;!&ndash;&lt;!&ndash;                <category&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                    android:name="android.intent.category.BROWSABLE" />&ndash;&gt;&ndash;&gt;-->
+
+<!--&lt;!&ndash;&lt;!&ndash;                <data&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                    android:scheme="https"&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                    android:host="applink.maamaas.com"&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                    android:pathPrefix="/vendor" />&ndash;&gt;&ndash;&gt;-->
+
+<!--&lt;!&ndash;&lt;!&ndash;            </intent-filter>&ndash;&gt;&ndash;&gt;-->
+
+<!--&lt;!&ndash;&lt;!&ndash;        </activity>&ndash;&gt;&ndash;&gt;-->
+
+
+<!--&lt;!&ndash;&lt;!&ndash;        &lt;!&ndash; Firebase Messaging &ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;        <service&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;            android:name=".MyFirebaseMessagingService"&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;            android:enabled="true"&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;            android:exported="false">&ndash;&gt;&ndash;&gt;-->
+
+<!--&lt;!&ndash;&lt;!&ndash;            <intent-filter>&ndash;&gt;&ndash;&gt;-->
+
+<!--&lt;!&ndash;&lt;!&ndash;                <action&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                    android:name="com.google.firebase.MESSAGING_EVENT" />&ndash;&gt;&ndash;&gt;-->
+
+<!--&lt;!&ndash;&lt;!&ndash;            </intent-filter>&ndash;&gt;&ndash;&gt;-->
+
+<!--&lt;!&ndash;&lt;!&ndash;        </service>&ndash;&gt;&ndash;&gt;-->
+
+
+<!--&lt;!&ndash;&lt;!&ndash;        &lt;!&ndash; Native Order Ringtone Service &ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;        <service&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;            android:name=".OrderRingService"&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;            android:enabled="true"&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;            android:exported="false"&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;            android:stopWithTask="false"&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;            android:foregroundServiceType="mediaPlayback" />&ndash;&gt;&ndash;&gt;-->
+
+
+<!--&lt;!&ndash;&lt;!&ndash;        &lt;!&ndash; Flutter &ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;        <meta-data&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;            android:name="flutterEmbedding"&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;            android:value="2" />&ndash;&gt;&ndash;&gt;-->
+
+
+<!--&lt;!&ndash;&lt;!&ndash;        &lt;!&ndash; Google Maps &ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;        <meta-data&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;            android:name="com.google.android.geo.API_KEY"&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;            android:value="YOUR_API_KEY" />&ndash;&gt;&ndash;&gt;-->
+
+
+<!--&lt;!&ndash;&lt;!&ndash;        &lt;!&ndash; Firebase Default Notification Channel &ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;        <meta-data&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;            android:name="com.google.firebase.messaging.default_notification_channel_id"&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;            android:value="vendor_order_channel_v2" />&ndash;&gt;&ndash;&gt;-->
+
+<!--&lt;!&ndash;&lt;!&ndash;    </application>&ndash;&gt;&ndash;&gt;-->
+
+<!--&lt;!&ndash;&lt;!&ndash;</manifest>&ndash;&gt;&ndash;&gt;-->
+
+
+
+<!--&lt;!&ndash;<manifest xmlns:android="http://schemas.android.com/apk/res/android"&ndash;&gt;-->
+<!--&lt;!&ndash;    xmlns:tools="http://schemas.android.com/tools">&ndash;&gt;-->
+
+
+<!--&lt;!&ndash;    <uses-permission android:name="android.permission.INTERNET" />&ndash;&gt;-->
+<!--&lt;!&ndash;    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />&ndash;&gt;-->
+
+
+<!--&lt;!&ndash;    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />&ndash;&gt;-->
+<!--&lt;!&ndash;    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />&ndash;&gt;-->
+
+
+<!--&lt;!&ndash;    <uses-permission&ndash;&gt;-->
+<!--&lt;!&ndash;        android:name="android.permission.CALL_PHONE"&ndash;&gt;-->
+<!--&lt;!&ndash;        tools:ignore="PermissionImpliesUnsupportedChromeOsHardware" />&ndash;&gt;-->
+
+
+<!--&lt;!&ndash;    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />&ndash;&gt;-->
+
+<!--&lt;!&ndash;    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />&ndash;&gt;-->
+<!--&lt;!&ndash;    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK" /> &lt;!&ndash; required Android 14+ &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;    <uses-permission android:name="android.permission.WAKE_LOCK" />&ndash;&gt;-->
+<!--&lt;!&ndash;    <uses-permission android:name="android.permission.USE_FULL_SCREEN_INTENT" />&ndash;&gt;-->
+<!--&lt;!&ndash;    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />&ndash;&gt;-->
+
+
+<!--&lt;!&ndash;    <application&ndash;&gt;-->
+<!--&lt;!&ndash;        android:label="maamaas partner"&ndash;&gt;-->
+<!--&lt;!&ndash;        android:name="android.app.Application"&ndash;&gt;-->
+<!--&lt;!&ndash;        android:icon="@mipmap/ic_launcher">&ndash;&gt;-->
+
+
+<!--&lt;!&ndash;        <activity&ndash;&gt;-->
+<!--&lt;!&ndash;            android:name=".MainActivity"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:exported="true"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:launchMode="singleTop"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:theme="@style/LaunchTheme">&ndash;&gt;-->
+<!--&lt;!&ndash;            <intent-filter>&ndash;&gt;-->
+<!--&lt;!&ndash;                <action android:name="android.intent.action.MAIN"/>&ndash;&gt;-->
+<!--&lt;!&ndash;                <category android:name="android.intent.category.LAUNCHER"/>&ndash;&gt;-->
+<!--&lt;!&ndash;            </intent-filter>&ndash;&gt;-->
+
+
+
+<!--&lt;!&ndash;            <intent-filter android:autoVerify="true">&ndash;&gt;-->
+<!--&lt;!&ndash;                <action android:name="android.intent.action.VIEW" />&ndash;&gt;-->
+
+<!--&lt;!&ndash;                <category android:name="android.intent.category.DEFAULT" />&ndash;&gt;-->
+<!--&lt;!&ndash;                <category android:name="android.intent.category.BROWSABLE" />&ndash;&gt;-->
+
+<!--&lt;!&ndash;                <data&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:scheme="https"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:host="applink.maamaas.com"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:pathPrefix="/vendor" />&ndash;&gt;-->
+<!--&lt;!&ndash;            </intent-filter>&ndash;&gt;-->
+<!--&lt;!&ndash;        </activity>&ndash;&gt;-->
+
+
+<!--&lt;!&ndash;        <meta-data&ndash;&gt;-->
+<!--&lt;!&ndash;            android:name="flutterEmbedding"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:value="2" />&ndash;&gt;-->
+
+
+<!--&lt;!&ndash;        <meta-data&ndash;&gt;-->
+<!--&lt;!&ndash;            android:name="com.google.android.geo.API_KEY"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:value="AIzaSyDAiwcYpCZHuH7AYvw1o7tYGK7yZTk4qHs"/>&ndash;&gt;-->
+
+<!--&lt;!&ndash;        <meta-data&ndash;&gt;-->
+<!--&lt;!&ndash;            android:name="com.google.firebase.messaging.default_notification_channel_id"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:value="school_bell_channel"/>&ndash;&gt;-->
+
+
+
+
+
+<!--&lt;!&ndash;        <service&ndash;&gt;-->
+<!--&lt;!&ndash;            android:name=".OrderRingService"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:exported="false"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:foregroundServiceType="mediaPlayback" />&ndash;&gt;-->
+
+
+<!--&lt;!&ndash;    </application>&ndash;&gt;-->
+
+
+<!--&lt;!&ndash;    <queries>&ndash;&gt;-->
+<!--&lt;!&ndash;        <intent>&ndash;&gt;-->
+<!--&lt;!&ndash;            <action android:name="android.intent.action.PROCESS_TEXT"/>&ndash;&gt;-->
+<!--&lt;!&ndash;            <data android:mimeType="text/plain"/>&ndash;&gt;-->
+<!--&lt;!&ndash;        </intent>&ndash;&gt;-->
+<!--&lt;!&ndash;    </queries>&ndash;&gt;-->
+
+
+<!--&lt;!&ndash;</manifest>&ndash;&gt;-->
+
+
+<!--<manifest xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:tools="http://schemas.android.com/tools">-->
+
+
+<!--    <uses-permission android:name="android.permission.INTERNET" />-->
+<!--    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />-->
+
+
+<!--    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />-->
+<!--    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />-->
+
+
+<!--    <uses-permission-->
+<!--        android:name="android.permission.CALL_PHONE"-->
+<!--        tools:ignore="PermissionImpliesUnsupportedChromeOsHardware" />-->
+
+
+<!--    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />-->
+
+<!--    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />-->
+<!--    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK" /> &lt;!&ndash; required Android 14+ &ndash;&gt;-->
+<!--    <uses-permission android:name="android.permission.WAKE_LOCK" />-->
+<!--    <uses-permission android:name="android.permission.USE_FULL_SCREEN_INTENT" />-->
+<!--    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />-->
+
+
+<!--    <application-->
+<!--        android:label="maamaas partner"-->
+<!--        android:name="android.app.Application"-->
+<!--        android:icon="@mipmap/ic_launcher">-->
+
+
+<!--        <activity-->
+<!--            android:name=".MainActivity"-->
+<!--            android:exported="true"-->
+<!--            android:launchMode="singleTop"-->
+<!--            android:theme="@style/LaunchTheme">-->
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN"/>-->
+<!--                <category android:name="android.intent.category.LAUNCHER"/>-->
+<!--            </intent-filter>-->
+
+
+
+<!--            <intent-filter android:autoVerify="true">-->
+<!--                <action android:name="android.intent.action.VIEW" />-->
+
+<!--                <category android:name="android.intent.category.DEFAULT" />-->
+<!--                <category android:name="android.intent.category.BROWSABLE" />-->
+
+<!--                <data-->
+<!--                    android:scheme="https"-->
+<!--                    android:host="applink.maamaas.com"-->
+<!--                    android:pathPrefix="/vendor" />-->
+<!--            </intent-filter>-->
+<!--        </activity>-->
+
+
+<!--        <meta-data-->
+<!--            android:name="flutterEmbedding"-->
+<!--            android:value="2" />-->
+
+
+<!--        <meta-data-->
+<!--            android:name="com.google.android.geo.API_KEY"-->
+<!--            android:value="AIzaSyDAiwcYpCZHuH7AYvw1o7tYGK7yZTk4qHs"/>-->
+
+<!--        <meta-data-->
+<!--            android:name="com.google.firebase.messaging.default_notification_channel_id"-->
+<!--            android:value="school_bell_channel"/>-->
+
+
+<!--        &lt;!&ndash; ⚠️ REQUIRED: without this, FCM messages never reach-->
+<!--             MyFirebaseMessagingService.onMessageReceived(), and-->
+<!--             OrderRingService is never started. This block was missing. &ndash;&gt;-->
+<!--        <service-->
+<!--            android:name=".MyFirebaseMessagingService"-->
+<!--            android:exported="false">-->
+<!--            <intent-filter>-->
+<!--                <action android:name="com.google.firebase.MESSAGING_EVENT" />-->
+<!--            </intent-filter>-->
+<!--        </service>-->
+
+
+<!--        <service-->
+<!--            android:name=".OrderRingService"-->
+<!--            android:exported="false"-->
+<!--            android:foregroundServiceType="mediaPlayback" />-->
+
+
+<!--    </application>-->
+
+
+<!--    <queries>-->
+<!--        <intent>-->
+<!--            <action android:name="android.intent.action.PROCESS_TEXT"/>-->
+<!--            <data android:mimeType="text/plain"/>-->
+<!--        </intent>-->
+<!--    </queries>-->
+
+
+<!--</manifest>-->
+
+
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+
+    <uses-permission
+        android:name="android.permission.CALL_PHONE"
+        tools:ignore="PermissionImpliesUnsupportedChromeOsHardware" />
+
+
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK" /> <!-- required Android 14+ -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.USE_FULL_SCREEN_INTENT" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+
+    <application
+        android:label="maamaas partner"
+        android:name="android.app.Application"
+        android:icon="@mipmap/ic_launcher">
+
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:launchMode="singleTop"
+            android:theme="@style/LaunchTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+
+
+
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:scheme="https"
+                    android:host="applink.maamaas.com"
+                    android:pathPrefix="/vendor" />
+            </intent-filter>
+        </activity>
+
+
+        <meta-data
+            android:name="flutterEmbedding"
+            android:value="2" />
+
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyDAiwcYpCZHuH7AYvw1o7tYGK7yZTk4qHs"/>
+
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_channel_id"
+            android:value="school_bell_channel"/>
+
+
+        <!-- ⚠️ REQUIRED: without this, FCM messages never reach
+             MyFirebaseMessagingService.onMessageReceived(), and
+             OrderRingService is never started. This block was missing. -->
+        <service
+            android:name=".MyFirebaseMessagingService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+
+        <service
+            android:name=".OrderRingService"
+            android:exported="false"
+            android:foregroundServiceType="mediaPlayback" />
+
+
+    </application>
+
+
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.PROCESS_TEXT"/>
+            <data android:mimeType="text/plain"/>
+        </intent>
+    </queries>
+
+
+</manifest>

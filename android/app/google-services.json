@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "603352740111",
+    "project_id": "maamaa-s-partner-77567",
+    "storage_bucket": "maamaa-s-partner-77567.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:603352740111:android:047a604e260e68d46d4e7a",
+        "android_client_info": {
+          "package_name": "com.maamaas.partner"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAfvGabXCmOpz5K0wwkdjHkdlePnEJPlZw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
