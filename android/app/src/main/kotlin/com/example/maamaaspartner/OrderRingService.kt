@@ -1,7 +1,6 @@
 
 
-
-package com.example.maamaaspartner
+package com.maamaas.partner
 
 import android.app.Notification
 import android.app.NotificationChannel
@@ -24,43 +23,30 @@ import androidx.core.content.ContextCompat
 class OrderRingService : Service() {
 
     companion object {
-
         private const val TAG = "OrderRingService"
-
         private const val CHANNEL_ID = "vendor_order_ring_service_v2"
         private const val NOTIFICATION_ID = 9991
-
-        // Ring for 15 seconds
-        private const val RING_DURATION = 15_000L
-
+        private const val RING_DURATION = 20_000L
         private var mediaPlayer: MediaPlayer? = null
-
         private var stopHandler: Handler? = null
         private var stopRunnable: Runnable? = null
 
         fun start(context: Context) {
-
             Log.d(TAG, "🚀 Starting OrderRingService")
-
             try {
-
                 val intent = Intent(context, OrderRingService::class.java)
-
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
                     ContextCompat.startForegroundService(context, intent)
                 } else {
                     context.startService(intent)
                 }
-
             } catch (e: Exception) {
                 Log.e(TAG, "❌ Failed to start OrderRingService", e)
             }
         }
 
         fun stop(context: Context) {
-
             Log.d(TAG, "🛑 Stopping OrderRingService")
-
             try {
                 val intent = Intent(context, OrderRingService::class.java)
                 context.stopService(intent)
@@ -70,30 +56,17 @@ class OrderRingService : Service() {
         }
     }
 
-    // Wake lock keeps the CPU alive long enough to prepare + start playback
-    // even if the screen is off / device is dozing when the service is created.
     private var wakeLock: PowerManager.WakeLock? = null
-
-    // The alarm stream is very commonly muted/low on test devices even though
-    // the media/ringtone volume is fine — USAGE_ALARM plays through THIS
-    // stream, not the ringtone stream, so we force it up while ringing.
     private var previousAlarmVolume: Int = -1
 
     override fun onCreate() {
         super.onCreate()
-
         Log.d(TAG, "✅ OrderRingService created")
-
         acquireWakeLock()
         boostAlarmVolume()
         createNotificationChannel()
-
-        // IMPORTANT: startForeground must happen immediately (within a few
-        // seconds of the service being created) or Android will kill it.
         startForeground(NOTIFICATION_ID, createForegroundNotification())
-
         Log.d(TAG, "✅ Foreground service started")
-
         startOrderSound()
     }
 
@@ -104,7 +77,7 @@ class OrderRingService : Service() {
                 PowerManager.PARTIAL_WAKE_LOCK,
                 "$TAG::RingWakeLock"
             )
-            wakeLock?.acquire(RING_DURATION + 5_000L) // safety timeout
+            wakeLock?.acquire(RING_DURATION + 5_000L)
             Log.d(TAG, "🔓 Wake lock acquired")
         } catch (e: Exception) {
             Log.e(TAG, "⚠️ Failed to acquire wake lock", e)
@@ -129,18 +102,24 @@ class OrderRingService : Service() {
             previousAlarmVolume = am.getStreamVolume(AudioManager.STREAM_ALARM)
             val maxVolume = am.getStreamMaxVolume(AudioManager.STREAM_ALARM)
 
-            Log.d(TAG, "🔈 Alarm stream volume before boost = $previousAlarmVolume / $maxVolume")
+            Log.d(TAG, "🔈 Alarm stream: $previousAlarmVolume / $maxVolume")
 
             if (previousAlarmVolume < maxVolume) {
                 am.setStreamVolume(
                     AudioManager.STREAM_ALARM,
                     maxVolume,
-                    0 // no UI flags, don't show the volume slider to the vendor
+                    0
                 )
-                Log.d(TAG, "🔊 Alarm stream volume boosted to max for ringing")
+                Log.d(TAG, "🔊 Alarm volume boosted to MAX")
             }
+
+            // Also ensure media volume is up (fallback)
+            val mediaVol = am.getStreamVolume(AudioManager.STREAM_MUSIC)
+            val maxMediaVol = am.getStreamMaxVolume(AudioManager.STREAM_MUSIC)
+            Log.d(TAG, "🎵 Media stream: $mediaVol / $maxMediaVol")
+
         } catch (e: Exception) {
-            Log.e(TAG, "⚠️ Failed to boost alarm volume", e)
+            Log.e(TAG, "⚠️ Failed to boost volume", e)
         }
     }
 
@@ -149,16 +128,15 @@ class OrderRingService : Service() {
             if (previousAlarmVolume >= 0) {
                 val am = getSystemService(Context.AUDIO_SERVICE) as AudioManager
                 am.setStreamVolume(AudioManager.STREAM_ALARM, previousAlarmVolume, 0)
-                Log.d(TAG, "🔉 Alarm stream volume restored to $previousAlarmVolume")
+                Log.d(TAG, "🔉 Alarm volume restored to $previousAlarmVolume")
             }
         } catch (e: Exception) {
-            Log.e(TAG, "⚠️ Failed to restore alarm volume", e)
+            Log.e(TAG, "⚠️ Failed to restore volume", e)
         }
         previousAlarmVolume = -1
     }
 
     private fun startOrderSound() {
-
         Log.d(TAG, "🔊 Starting order ringtone")
 
         try {
@@ -167,10 +145,26 @@ class OrderRingService : Service() {
             val player = MediaPlayer()
             mediaPlayer = player
 
-            val afd = resources.openRawResourceFd(R.raw.zomato_order_ringtone)
+            // Try to get the resource
+            val resourceId = resources.getIdentifier(
+                "zomato_order_ringtones",
+                "raw",
+                packageName
+            )
+
+            Log.d(TAG, "📁 Resource ID: $resourceId")
+
+            if (resourceId == 0) {
+                Log.e(TAG, "❌ Ringtone resource NOT FOUND!")
+                Log.e(TAG, "❌ Check: android/app/src/main/res/raw/zomato_order_ringtone.mp3")
+                stopSelf()
+                return
+            }
+
+            val afd = resources.openRawResourceFd(resourceId)
 
             if (afd == null) {
-                Log.e(TAG, "❌ Ringtone resource not found (check res/raw/zomato_order_ringtone.mp3)")
+                Log.e(TAG, "❌ Failed to open resource file descriptor")
                 stopSelf()
                 return
             }
@@ -178,20 +172,28 @@ class OrderRingService : Service() {
             player.setDataSource(afd.fileDescriptor, afd.startOffset, afd.length)
             afd.close()
 
+            Log.d(TAG, "✅ Audio data source set")
+
+            // Try ALARM stream first
             player.setAudioAttributes(
                 AudioAttributes.Builder()
                     .setUsage(AudioAttributes.USAGE_ALARM)
                     .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
                     .build()
             )
+            Log.d(TAG, "🎵 Audio attributes set to ALARM")
+
+            // Explicitly set volume to max
+            player.setVolume(1.0f, 1.0f)
+            Log.d(TAG, "🔊 Volume set to MAX")
 
             player.isLooping = true
 
             player.setOnPreparedListener {
                 try {
-                    Log.d(TAG, "🎵 MediaPlayer prepared")
+                    Log.d(TAG, "🎵 MediaPlayer PREPARED")
                     it.start()
-                    Log.d(TAG, "🔔 ORDER RINGTONE STARTED")
+                    Log.d(TAG, "🔔🔔🔔 ORDER RINGTONE STARTED 🔔🔔🔔")
                     scheduleStop()
                 } catch (e: Exception) {
                     Log.e(TAG, "❌ Failed to start MediaPlayer", e)
@@ -200,37 +202,50 @@ class OrderRingService : Service() {
             }
 
             player.setOnErrorListener { _, what, extra ->
-                Log.e(TAG, "❌ MediaPlayer error what=$what extra=$extra")
-                stopOrderSound()
-                stopSelf()
+                Log.e(TAG, "❌ MediaPlayer ERROR: what=$what, extra=$extra")
+
+                // Try fallback with MUSIC stream
+                try {
+                    Log.d(TAG, "🔄 Trying fallback with MUSIC stream")
+                    player.setAudioAttributes(
+                        AudioAttributes.Builder()
+                            .setUsage(AudioAttributes.USAGE_MEDIA)
+                            .setContentType(AudioAttributes.CONTENT_TYPE_MUSIC)
+                            .build()
+                    )
+                    player.prepareAsync()
+                } catch (e: Exception) {
+                    Log.e(TAG, "❌ Fallback also failed", e)
+                    stopOrderSound()
+                    stopSelf()
+                }
                 true
             }
 
             player.prepareAsync()
+            Log.d(TAG, "⏳ MediaPlayer preparing...")
 
         } catch (e: Exception) {
             Log.e(TAG, "❌ Error while playing ringtone", e)
+            e.printStackTrace()
             stopOrderSound()
             stopSelf()
         }
     }
 
     private fun scheduleStop() {
-
         stopHandler?.removeCallbacksAndMessages(null)
         stopHandler = Handler(Looper.getMainLooper())
-
         stopRunnable = Runnable {
-            Log.d(TAG, "⏰ Ring duration completed")
+            Log.d(TAG, "⏰ 20 seconds completed - stopping ringtone")
             stopOrderSound()
             stopSelf()
         }
-
         stopHandler?.postDelayed(stopRunnable!!, RING_DURATION)
+        Log.d(TAG, "⏰ Auto-stop scheduled in ${RING_DURATION/1000} seconds")
     }
 
     private fun stopOrderSound() {
-
         try {
             stopHandler?.removeCallbacksAndMessages(null)
             stopHandler = null
@@ -238,49 +253,53 @@ class OrderRingService : Service() {
 
             mediaPlayer?.let { player ->
                 try {
-                    if (player.isPlaying) player.stop()
+                    if (player.isPlaying) {
+                        player.stop()
+                        Log.d(TAG, "🔇 Player stopped")
+                    }
                 } catch (_: Exception) {}
                 try {
                     player.reset()
                 } catch (_: Exception) {}
                 try {
                     player.release()
+                    Log.d(TAG, "🔇 Player released")
                 } catch (_: Exception) {}
             }
-
             mediaPlayer = null
-
-            Log.d(TAG, "🔇 Ringtone stopped")
-
+            Log.d(TAG, "🔇 Ringtone fully stopped")
         } catch (e: Exception) {
             Log.e(TAG, "❌ Error stopping ringtone", e)
         }
     }
 
     private fun createNotificationChannel() {
-
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-
             val manager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
 
-            val channel = NotificationChannel(
+            // Check if channel already exists
+            val channel = manager.getNotificationChannel(CHANNEL_ID)
+            if (channel != null) {
+                Log.d(TAG, "✅ Channel already exists: ${channel.id}")
+                return
+            }
+
+            val newChannel = NotificationChannel(
                 CHANNEL_ID,
                 "Vendor Order Ring",
                 NotificationManager.IMPORTANCE_HIGH
             )
+            newChannel.description = "New vendor order ringtone"
+            // DO NOT set sound to null
+            newChannel.enableVibration(true)
+            newChannel.enableLights(true)
 
-            channel.description = "New vendor order ringtone"
-            channel.setSound(null, null)
-            channel.enableVibration(true)
-
-            manager.createNotificationChannel(channel)
-
-            Log.d(TAG, "✅ Order service notification channel created")
+            manager.createNotificationChannel(newChannel)
+            Log.d(TAG, "✅ Notification channel created: $CHANNEL_ID")
         }
     }
 
     private fun createForegroundNotification(): Notification {
-
         return NotificationCompat.Builder(this, CHANNEL_ID)
             .setSmallIcon(R.mipmap.ic_launcher)
             .setContentTitle("🚚 New Order")
@@ -294,8 +313,6 @@ class OrderRingService : Service() {
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
         Log.d(TAG, "📩 OrderRingService onStartCommand")
-        // If Android kills the service, don't automatically restart it
-        // without a fresh FCM event.
         return START_NOT_STICKY
     }
 
@@ -309,3 +326,12 @@ class OrderRingService : Service() {
 
     override fun onBind(intent: Intent?): IBinder? = null
 }
+
+
+
+
+
+
+
+
+

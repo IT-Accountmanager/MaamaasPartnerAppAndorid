@@ -259,12 +259,36 @@ class _LoginPageState extends State<LoginPage1> with TickerProviderStateMixin {
         ),
       );
 
+      // final fcmToken = await FirebaseMessaging.instance.getToken();
+      // if (fcmToken != null && fcmToken.isNotEmpty) {
+      //   await Notification_authService.registerFcmToken(fcmToken);
+      // }
+      //
+      // await _updateCurrentLocation(result['data']);
+
+      debugPrint('🔥 STEP 1: Login successful');
+
+      debugPrint('🔥 STEP 2: Getting FCM token...');
       final fcmToken = await FirebaseMessaging.instance.getToken();
+
+      debugPrint('🔥 STEP 3: FCM getToken completed');
+      debugPrint('🔥 FCM token is null: ${fcmToken == null}');
+      debugPrint('🔥 FCM token length: ${fcmToken?.length ?? 0}');
+
       if (fcmToken != null && fcmToken.isNotEmpty) {
+        debugPrint('🔥 STEP 4: Calling registerFcmToken()');
+
         await Notification_authService.registerFcmToken(fcmToken);
+
+        debugPrint('🔥 STEP 5: registerFcmToken() completed');
+      } else {
+        debugPrint('❌ STEP 4: FCM token is NULL or EMPTY');
       }
 
+      debugPrint('🔥 STEP 6: Updating location...');
       await _updateCurrentLocation(result['data']);
+
+      debugPrint('🔥 STEP 7: Location update completed');
 
       Navigator.of(context).pop();
 

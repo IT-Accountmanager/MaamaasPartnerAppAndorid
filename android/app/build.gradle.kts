@@ -89,7 +89,7 @@ if (keystorePropertiesFile.exists()) {
 }
 
 android {
-    namespace = "com.example.maamaaspartner"
+    namespace = "com.maamaas.partner"
     compileSdk = 36
     ndkVersion = "28.2.13676358"
     compileOptions {
@@ -122,8 +122,8 @@ android {
     buildTypes {
         getByName("release") {
             signingConfig = signingConfigs.getByName("release")
-            isMinifyEnabled = true
-            isShrinkResources = true
+            isMinifyEnabled = false
+            isShrinkResources = false
             isDebuggable = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),

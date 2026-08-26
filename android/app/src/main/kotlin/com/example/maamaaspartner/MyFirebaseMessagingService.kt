@@ -1,5 +1,7 @@
 
-package com.example.maamaaspartner
+
+
+package com.maamaas.partner
 
 import android.util.Log
 import com.google.firebase.messaging.FirebaseMessagingService
@@ -14,16 +16,16 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
     override fun onMessageReceived(remoteMessage: RemoteMessage) {
         super.onMessageReceived(remoteMessage)
 
-        Log.d(TAG, "══════════════════════════════════════")
-        Log.d(TAG, "📩 FCM MESSAGE RECEIVED")
-        Log.d(TAG, "📦 Message ID = ${remoteMessage.messageId}")
-        Log.d(TAG, "📦 DATA = ${remoteMessage.data}")
+        Log.e(TAG, "========== FCM RECEIVED ==========")
+        Log.e(TAG, "messageId = ${remoteMessage.messageId}")
+        Log.e(TAG, "from = ${remoteMessage.from}")
+        Log.e(TAG, "data = ${remoteMessage.data}")
+        Log.e(TAG, "notification = ${remoteMessage.notification}")
 
         val data = remoteMessage.data
 
         if (data.isEmpty()) {
-            Log.d(TAG, "⚠️ FCM message contains no data")
-            Log.d(TAG, "══════════════════════════════════════")
+            Log.e(TAG, "❌ FCM data is empty")
             return
         }
 
@@ -33,40 +35,44 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
         val vendorId = data["vendorId"] ?: ""
         val amount = data["amount"] ?: ""
 
-        Log.d(TAG, "➡️ eventType = $eventType")
-        Log.d(TAG, "➡️ notificationType = $notificationType")
-        Log.d(TAG, "➡️ orderId = $orderId")
-        Log.d(TAG, "➡️ vendorId = $vendorId")
-        Log.d(TAG, "➡️ amount = $amount")
+        Log.e(TAG, "eventType = $eventType")
+        Log.e(TAG, "notificationType = $notificationType")
+        Log.e(TAG, "orderId = $orderId")
+        Log.e(TAG, "vendorId = $vendorId")
+        Log.e(TAG, "amount = $amount")
 
         val isNewOrder =
-            eventType == "VENDOR_NEW_ORDER" && notificationType == "VENDOR_ORDER"
+            eventType == "VENDOR_NEW_ORDER" &&
+                    notificationType == "VENDOR_ORDER"
 
-        Log.d(TAG, "🔍 isNewOrder = $isNewOrder")
+        Log.e(TAG, "isNewOrder = $isNewOrder")
 
         if (!isNewOrder) {
-            Log.d(TAG, "ℹ️ Not a vendor new-order event. Ringtone will NOT start.")
-            Log.d(TAG, "══════════════════════════════════════")
+            Log.e(TAG, "❌ Not a vendor new-order event")
+            Log.e(TAG, "========== FCM PROCESSING COMPLETE ==========")
             return
         }
 
-        Log.d(TAG, "🚨🚨 NEW ORDER DETECTED — Order #$orderId, Vendor #$vendorId, ₹$amount")
-        Log.d(TAG, "🔊 Starting OrderRingService...")
+        Log.e(TAG, "🚨🚨 NEW ORDER DETECTED 🚨🚨")
+        Log.e(TAG, "Order #$orderId")
+        Log.e(TAG, "Vendor #$vendorId")
+        Log.e(TAG, "Amount = ₹$amount")
 
         try {
+            // Start the ring service
             OrderRingService.start(this)
-            Log.d(TAG, "✅ OrderRingService.start() requested")
-        } catch (e: Exception) {
-            Log.e(TAG, "❌ Failed to start OrderRingService", e)
+            Log.e(TAG, "✅ OrderRingService.start() called successfully")
+        } catch (e: Throwable) {
+            Log.e(TAG, "❌ FAILED TO START OrderRingService", e)
         }
 
-        Log.d(TAG, "══════════════════════════════════════")
+        Log.e(TAG, "========== FCM PROCESSING COMPLETE ==========")
     }
 
     override fun onNewToken(token: String) {
         super.onNewToken(token)
-        Log.d(TAG, "🔥 FCM token refreshed. Length=${token.length}")
-        // TODO: send the refreshed token to your backend here so pushes
-        // keep reaching this device (e.g. via your ApiClient).
+        Log.e(TAG, "🔥 FCM TOKEN REFRESHED")
+        Log.e(TAG, "Token length = ${token.length}")
+        // Send token to backend
     }
 }

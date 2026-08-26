@@ -223,21 +223,7 @@ class Authservice {
             ? List<String>.from(data['appTypes'])
             : [];
 
-        // // ── Debug logging ─────────────────────────────────────────────────────
-        // debugPrint("🔑 Token: ${token.isNotEmpty ? 'Received' : 'Missing'}");
-        // debugPrint(
-        //   "♻️  RefreshToken: ${refreshToken.isNotEmpty ? 'Received' : 'Missing'}",
-        // );
-        // debugPrint("🏪 VendorId (final): $vendorId");
-        // debugPrint("👨‍💼 EmployeeId: $employeeId");
-        // debugPrint("🎭 Role: $role");
-        // debugPrint("🧩 EmployeeRole: $employeeRole");
-        // debugPrint("👨‍👩‍👦 ParentId: $parentId");
-        // debugPrint("🆔 CustomerId: $customerId");
-        // debugPrint("📦 BusinessModules: $businessModules");
-        // debugPrint("🔬 SubModules: $subModules");
-        // debugPrint("🪑 TableModule: $tableModule");
-        // debugPrint("📱 AppTypes: $appTypes");
+
 
         // ── Secure storage (sensitive tokens) ────────────────────────────────
         await _secureStorage.write(key: 'token', value: token);
