@@ -284,7 +284,7 @@
 //
 //   void _openRazorpayCheckout(double amount, String orderId) {
 //     var options = {
-//       'key': 'rzp_live_TJDvykibQEsCuN', // 🔹 use live key in production
+//       'key': 'rzp_test_TJECsclCivENpY', // 🔹 use live key in production
 //       'order_id': orderId,
 //       'amount': (amount * 100).toInt(), // Razorpay expects amount in paise
 //       'name': 'Order Payment',

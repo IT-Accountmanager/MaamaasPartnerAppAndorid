@@ -336,7 +336,7 @@ class _catering_cartState extends ConsumerState<catering_cart> {
   void _openRazorpayCheckout(double amount) {
     final double finalAmount = (cart?.total ?? amount) * 100;
     var options = {
-      'key': 'rzp_live_TJDvykibQEsCuN',
+      'key': 'rzp_test_TJECsclCivENpY',
       'amount': finalAmount.toInt(),
       'name': 'Maamaas App',
       'description': 'Order Payment',

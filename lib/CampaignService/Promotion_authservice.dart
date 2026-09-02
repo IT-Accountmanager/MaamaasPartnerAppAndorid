@@ -252,7 +252,7 @@ class PromotionAuthService {
   //           'success': true,
   //           'campaignId': null,
   //           'orderId': null, // If backend returns orderId, add it here
-  //           'razorpayKey': 'rzp_live_TJDvykibQEsCuN',
+  //           'razorpayKey': 'rzp_test_TJECsclCivENpY',
   //           'amount': campaignData['totalBudget']?.toDouble() ?? 0,
   //           'message': responseBody,
   //         };
@@ -265,7 +265,7 @@ class PromotionAuthService {
   //           'success': true,
   //           'campaignId': data['id'],
   //           'orderId': data['orderId'],
-  //           'razorpayKey': data['razorpayKey'] ?? 'rzp_live_TJDvykibQEsCuN',
+  //           'razorpayKey': data['razorpayKey'] ?? 'rzp_test_TJECsclCivENpY',
   //           'amount': data['amount'] ?? campaignData['totalBudget']?.toDouble() ?? 0,
   //         };
   //       } catch (e) {
@@ -273,7 +273,7 @@ class PromotionAuthService {
   //           'success': true,
   //           'campaignId': null,
   //           'orderId': null,
-  //           'razorpayKey': 'rzp_live_TJDvykibQEsCuN',
+  //           'razorpayKey': 'rzp_test_TJECsclCivENpY',
   //           'amount': campaignData['totalBudget']?.toDouble() ?? 0,
   //           'message': responseBody,
   //         };

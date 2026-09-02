@@ -20,7 +20,7 @@ class _WalletScreenState extends State<WalletScreen> {
   static const Color debitColor = Color(0xFFE6493B);
 
   // ── Razorpay ────────────────────────────────────────────────────────────────
-  static const String _razorpayKey = 'rzp_live_TJDvykibQEsCuN';
+  static const String _razorpayKey = 'rzp_test_TJECsclCivENpY';
   late Razorpay _razorpay;
 
   // ── State ───────────────────────────────────────────────────────────────────

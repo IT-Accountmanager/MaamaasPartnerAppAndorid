@@ -120,7 +120,7 @@
 // // //       final orderId = await FinanceService.createRazorpayOrder(amt);
 // // //       if (orderId == null) throw Exception('Order ID not received');
 // // //       _razorpay.open({
-// // //         'key': 'rzp_live_TJDvykibQEsCuN',
+// // //         'key': 'rzp_test_TJECsclCivENpY',
 // // //         'amount': (amt * 100).toInt(),
 // // //         'currency': 'INR',
 // // //         'order_id': orderId,
@@ -899,7 +899,7 @@
 // //       if (orderId == null) throw Exception('Order ID not received');
 // //
 // //       _razorpay.open({
-// //         'key': 'rzp_live_TJDvykibQEsCuN',
+// //         'key': 'rzp_test_TJECsclCivENpY',
 // //         'amount': (_totalWithGst * 100).toInt(),
 // //         'currency': 'INR',
 // //         'order_id': orderId,
@@ -1820,7 +1820,7 @@
 //       if (orderId == null) throw Exception('Order ID not received');
 //
 //       _razorpay.open({
-//         'key': 'rzp_live_TJDvykibQEsCuN',
+//         'key': 'rzp_test_TJECsclCivENpY',
 //         'amount': (_totalWithGst * 100).toInt(),
 //         'currency': 'INR',
 //         'order_id': orderId,
@@ -2740,7 +2740,7 @@ class _CreditsTabState extends State<CreditsTab> {
       if (orderId == null) throw Exception('Order ID not received');
 
       _razorpay.open({
-        'key': 'rzp_live_TJDvykibQEsCuN',
+        'key': 'rzp_test_TJECsclCivENpY',
         'amount': (_totalWithGst * 100).toInt(),
         'currency': 'INR',
         'order_id': orderId,

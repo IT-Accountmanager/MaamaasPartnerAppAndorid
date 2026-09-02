@@ -20,8 +20,8 @@ class Authservice {
   static SessionExpiredHandler? onSessionExpired;
 
   static const String subscription =
-      // "http://staging.maamaas.com:8080/subscription";
-      "https://backend.maamaas.com/subscription";
+      "http://staging.maamaas.com:8080/subscription";
+      // "https://backend.maamaas.com/subscription";
 
   static final Dio _dio = Dio();
 
@@ -444,11 +444,11 @@ class Authservice {
     // final url = Uri.parse(
     //   "http://10.10.20.9:6300/Mamaswebsite-0.0.1-SNAPSHOT/api/vendors/$vendorId",
     // );
-    final url = Uri.parse("https://backend.maamaas.com/api/vendors/$vendorId");
-
-    // final url = Uri.parse(
-    //   "http://staging.maamaas.com:8080/api/vendors/$vendorId",
-    // );
+    // final url = Uri.parse("https://backend.maamaas.com/api/vendors/$vendorId");
+    //
+    final url = Uri.parse(
+      "http://staging.maamaas.com:8080/api/vendors/$vendorId",
+    );
 
     try {
       final response = await http.get(url);

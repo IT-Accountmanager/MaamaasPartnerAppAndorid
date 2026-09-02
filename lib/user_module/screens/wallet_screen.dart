@@ -542,8 +542,8 @@ class _WalletScreenState extends State<WalletScreen> {
                     }
 
                     var options = {
-                      // 'key': 'rzp_live_TJDvykibQEsCuN',
-                      'key': 'rzp_live_TJDvykibQEsCuN',
+                      // 'key': 'rzp_test_TJECsclCivENpY',
+                      'key': 'rzp_test_TJECsclCivENpY',
                       'order_id': orderId,
                       'amount': (amount * 100).toInt(),
                       'name': 'Wallet Top-Up',
@@ -743,8 +743,8 @@ class _WalletScreenState extends State<WalletScreen> {
 
                             // Step 2: Open Razorpay payment
                             var options = {
-                              'key': 'rzp_live_TJDvykibQEsCuN',
-                              // 'key': 'rzp_live_TJDvykibQEsCuN',
+                              'key': 'rzp_test_TJECsclCivENpY',
+                              // 'key': 'rzp_test_TJECsclCivENpY',
                               'order_id': orderId,
                               'amount': (amountToPay * 100).toInt(), // paise
                               'name': 'Wallet Top-Up',

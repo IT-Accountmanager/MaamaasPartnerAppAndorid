@@ -3910,7 +3910,7 @@ class _VendorQuotationContentState extends State<VendorQuotationContent> {
 
   void _openRazorpayCheckout(double amount, String orderId) {
     var options = {
-      'key': 'rzp_live_TJDvykibQEsCuN',
+      'key': 'rzp_test_TJECsclCivENpY',
       'amount': (_selectedQuotation!.grandTotal * 100).toInt(),
       'name': 'Maamaas App',
       'description': 'Catering Order Payment',

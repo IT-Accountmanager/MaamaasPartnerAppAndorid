@@ -266,7 +266,7 @@ class _SubscriptionScreenState extends State<SubscriptionScreen> {
       }
 
       _razorpay.open({
-        'key': 'rzp_live_TJDvykibQEsCuN',
+        'key': 'rzp_test_TJECsclCivENpY',
         'amount': _total.toInt(),
         'currency': 'INR',
         'order_id': orderId,

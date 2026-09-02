@@ -1876,7 +1876,7 @@ class _AdPreviewScreenState extends State<AdPreviewScreen>
       // razorpay.on(Razorpay.EVENT_PAYMENT_SUCCESS, _handlePaymentSuccess);
       // razorpay.on(Razorpay.EVENT_PAYMENT_ERROR, _handlePaymentError);
       // razorpay.open({
-      //   'key': 'rzp_live_TJDvykibQEsCuN',
+      //   'key': 'rzp_test_TJECsclCivENpY',
       //   'amount': (_grandTotal * 100).round(),
       //   'currency': 'INR',
       //   'name': 'Maamaas',

@@ -298,7 +298,7 @@
 //       if (orderId == null) throw Exception('Order ID not received');
 //       final cfg = _buttonConfig;
 //       _razorpay.open({
-//         'key': 'rzp_live_TJDvykibQEsCuN',
+//         'key': 'rzp_test_TJECsclCivENpY',
 //         'amount': (_grandTotal * 1).toInt(),
 //         'currency': 'INR',
 //         'order_id': orderId,
@@ -331,7 +331,7 @@
 //         );
 //         if (orderId == null) throw Exception('Order ID not received');
 //         _razorpay.open({
-//           'key': 'rzp_live_TJDvykibQEsCuN',
+//           'key': 'rzp_test_TJECsclCivENpY',
 //           'amount': (pr.totalAmount * 1).toInt(),
 //           'currency': 'INR',
 //           'order_id': orderId,

@@ -337,7 +337,7 @@
 // //       }
 // //       _currentOrderId = orderId;
 // //       _razorpay.open({
-// //         'key': 'rzp_live_TJDvykibQEsCuN',
+// //         'key': 'rzp_test_TJECsclCivENpY',
 // //         'amount': (amount * 100).toInt(),
 // //         'currency': 'INR',
 // //         'name': 'Maamaas Catering',
@@ -1935,7 +1935,7 @@
 //       }
 //       _currentOrderId = orderId;
 //       _razorpay.open({
-//         'key': 'rzp_live_TJDvykibQEsCuN',
+//         'key': 'rzp_test_TJECsclCivENpY',
 //         'amount': (amount * 100).toInt(),
 //         'currency': 'INR',
 //         'name': 'Maamaas Catering',
@@ -3571,7 +3571,7 @@ class _LeadManagementPageState extends State<LeadManagementPage> {
       }
       _currentOrderId = orderId;
       _razorpay.open({
-        'key': 'rzp_live_TJDvykibQEsCuN',
+        'key': 'rzp_test_TJECsclCivENpY',
         'amount': (amount * 100).toInt(),
         'currency': 'INR',
         'name': 'Maamaas Catering',

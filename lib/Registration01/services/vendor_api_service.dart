@@ -3632,8 +3632,8 @@ import '../../API/Apiclient.dart';
 
 class VendorApiService {
   static const String _endpoint = 'api/vendors';
-  static const String _foodBaseUrl = 'https://backend.maamaas.com/food/';
-  // static const String _foodBaseUrl = 'http://staging.maamaas.com:8080/food/';
+  // static const String _foodBaseUrl = 'https://backend.maamaas.com/food/';
+  static const String _foodBaseUrl = 'http://staging.maamaas.com:8080/food/';
 
   static Future<Map<String, dynamic>?> getVendor(String vendorId) async {
     try {

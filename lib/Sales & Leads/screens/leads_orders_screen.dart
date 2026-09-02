@@ -97,7 +97,7 @@ class _LeadsOrdersScreenState extends State<LeadsOrdersScreen> {
     }
 
     _razorpay.open({
-      'key': 'rzp_live_TJDvykibQEsCuN',
+      'key': 'rzp_test_TJECsclCivENpY',
       'amount': (lead.leadPrice * 100).round(), // paise
       'currency': 'INR',
       'name': 'Catering Service',

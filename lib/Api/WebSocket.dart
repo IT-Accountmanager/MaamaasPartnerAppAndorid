@@ -36,8 +36,8 @@ class WebSocketManager {
 
     _foodClient = StompClient(
       config: StompConfig(
-        // url: 'ws://staging.maamaas.com:8080/food/ws',
-        url: 'ws://backend.maamaas.com/food/ws',
+        url: 'ws://staging.maamaas.com:8080/food/ws',
+        // url: 'ws://backend.maamaas.com/food/ws',
         onConnect: (frame) {
           debugPrint('✅ Food WebSocket Connected');
 

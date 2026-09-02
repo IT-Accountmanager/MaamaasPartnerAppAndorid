@@ -1904,7 +1904,7 @@ class _food_cartScreenState extends State<food_CartScreen>
   void _openRazorpay(double amount, String orderId) {
     try {
       _razorpay.open({
-        'key': 'rzp_live_TJDvykibQEsCuN',
+        'key': 'rzp_test_TJECsclCivENpY',
         'order_id': orderId,
         'amount': (amount * 100).toInt(),
         'name': 'Order Payment',

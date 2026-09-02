@@ -529,7 +529,7 @@ class _CampaignListScreenState extends State<CampaignListScreen> {
       debugPrint('📦 Stored payment context for orderId: $orderId');
 
       var options = {
-        'key': 'rzp_live_TJDvykibQEsCuN',
+        'key': 'rzp_test_TJECsclCivENpY',
         'amount': (amount * 100).toInt(),
         'name': 'Maamaas App',
         'description': 'Campaign Payment',

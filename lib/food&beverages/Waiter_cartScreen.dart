@@ -1403,7 +1403,7 @@ class _Waiter_cartScreenState extends State<Waiter_cartScreen> {
 
   void _openRazorpayCheckout(double amount, String orderId) {
     var options = {
-      'key': 'rzp_live_TJDvykibQEsCuN',
+      'key': 'rzp_test_TJECsclCivENpY',
       'order_id': orderId,
       'amount': (amount * 100).toInt(),
       'name': 'Order Payment',

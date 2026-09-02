@@ -9,7 +9,7 @@ class SubscriptionApiService {
   static const String _baseUrl = 'http://staging.maamaas.com:8080';
   static const String _planType = 'STANDARD';
   static const String _businessVertical = 'FOOD_AND_BEVERAGES';
-  static const String _razorpayKey = 'rzp_live_TJDvykibQEsCuN';
+  static const String _razorpayKey = 'rzp_test_TJECsclCivENpY';
 
   String get razorpayKey => _razorpayKey;
 

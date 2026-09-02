@@ -65,7 +65,7 @@ class _BuySlotsDialogState extends State<BuySlotsDialog> {
       _pendingOrderId = orderId;
 
       _razorpay.open({
-        'key': 'rzp_live_TJDvykibQEsCuN',
+        'key': 'rzp_test_TJECsclCivENpY',
         'amount': (_total * 100).toInt(), // Razorpay expects paise
         'currency': 'INR',
         'order_id': orderId,

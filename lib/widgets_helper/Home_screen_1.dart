@@ -33,6 +33,7 @@ import '../food&beverages/Settings&Controls.dart';
 import '../food&beverages/TableManagementPage.dart';
 import '../food&beverages/order_management.dart';
 import '../food&beverages/support_team.dart';
+import '../lead Management/screens/leads/vendor_leads_screen.dart';
 import '../login_screen.dart';
 import '../standard Menu/screens/standard_menu_screen.dart';
 import '../user_module/screens/saved_address.dart' show SavedAddress;
@@ -1460,13 +1461,13 @@ class _HomeWrapperState extends State<HomeWrapper> {
       'color': _H.blue,
     },
 
-    // {
-    //   'icon': Icons.app_registration,
-    //   'title': 'Sale Management',
-    //   'page': LeadManagementPage(),
-    //   'module': BusinessModules.LeadManagementPage,
-    //   'color': _H.blue,
-    // },
+    {
+      'icon': Icons.app_registration,
+      'title': 'Sale Management',
+      'page': VendorLeadsScreen(),
+      'module': BusinessModules.VendorLeadsScreen,
+      'color': _H.blue,
+    },
   ];
 
   void _navigateToModule(Map<String, dynamic> module, BuildContext context) {

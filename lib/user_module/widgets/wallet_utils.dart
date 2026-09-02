@@ -112,7 +112,7 @@ class LoadMoneyHelper {
                     if (orderId == null) return;
 
                     razorpay.open({
-                      'key': 'rzp_live_TJDvykibQEsCuN',
+                      'key': 'rzp_test_TJECsclCivENpY',
                       'order_id': orderId,
                       'amount': (payable * 100).toInt(),
                       'name': 'Wallet Top-Up',
@@ -173,7 +173,7 @@ class LoadMoneyHelper {
                 if (orderId == null) return;
 
                 razorpay.open({
-                  'key': 'rzp_live_TJDvykibQEsCuN',
+                  'key': 'rzp_test_TJECsclCivENpY',
                   'order_id': orderId,
                   'amount': (amount * 100).toInt(),
                   'prefill': {

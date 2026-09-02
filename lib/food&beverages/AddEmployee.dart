@@ -55,7 +55,7 @@ enum BusinessModules {
   TeamDirectoryScreen,
   FoodRegistrationScreen,
   Supportteam,
-  StandardMenuScreen, WalletScreen, ReferScreen, MainShell, QuotationScreen, LeadManagementPage,
+  StandardMenuScreen, WalletScreen, ReferScreen, MainShell, QuotationScreen, LeadManagementPage, VendorLeadsScreen,
 }
 
 // ─── Design Tokens ─────────────────────────────────────────────────────────────

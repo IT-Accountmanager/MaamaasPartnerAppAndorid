@@ -323,7 +323,7 @@
 // // // //       _currentTotal = total;
 // // // //
 // // // //       var options = {
-// // // //         'key': 'rzp_live_TJDvykibQEsCuN',
+// // // //         'key': 'rzp_test_TJECsclCivENpY',
 // // // //         'amount': (total * 100).toInt(),
 // // // //         'currency': 'INR',
 // // // //         'order_id': orderId,
@@ -529,7 +529,7 @@
 // //         throw Exception('Order ID not returned from backend');
 // //       _currentTotal = total;
 // //       _razorpay.open({
-// //         'key': 'rzp_live_TJDvykibQEsCuN',
+// //         'key': 'rzp_test_TJECsclCivENpY',
 // //         'amount': (total * 100).toInt(),
 // //         'currency': 'INR',
 // //         'order_id': orderId,
@@ -1440,7 +1440,7 @@
 // // }
 // //
 // // // ─── Razorpay test key — swap for live key before release ──────────────────────
-// // const _kRazorpayKey = 'rzp_live_TJDvykibQEsCuN';
+// // const _kRazorpayKey = 'rzp_test_TJECsclCivENpY';
 // //
 // // // ─── Screen ───────────────────────────────────────────────────────────────────
 // // class SubscriptionsScreen extends StatefulWidget {

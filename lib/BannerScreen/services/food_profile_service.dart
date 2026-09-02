@@ -8,8 +8,8 @@ import '../models/food_profile_models.dart';
 
 class FoodProfileService {
   static const String _service = "food";
-  static const String _base = "https://backend.maamaas.com";
-  // static const String _base = "http://staging.maamaas.com:8080";
+  // static const String _base = "https://backend.maamaas.com";
+  static const String _base = "http://staging.maamaas.com:8080";
 
   static Future<int> _vid() async {
     final p = await SharedPreferences.getInstance();

@@ -254,8 +254,8 @@ class _tablecartState extends State<tablecart> {
 
   void _openRazorpayCheckout(double amount) {
     var options = {
-      // 'key': 'rzp_live_TJDvykibQEsCuN',
-      'key': 'rzp_live_TJDvykibQEsCuN',
+      // 'key': 'rzp_test_TJECsclCivENpY',
+      'key': 'rzp_test_TJECsclCivENpY',
       'amount': (amount * 100).toInt(),
       'name': 'Order Payment',
       'description': 'Online Payment via Razorpay',

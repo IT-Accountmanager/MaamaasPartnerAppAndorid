@@ -1020,7 +1020,7 @@ class _ReviewScreenState extends State<ReviewScreen> {
       if (orderId != null && orderId.isNotEmpty) {
         _createdOrderId = orderId;
         var options = {
-          'key': 'rzp_live_TJDvykibQEsCuN',
+          'key': 'rzp_test_TJECsclCivENpY',
           'amount': (widget.calculatedBudget * 100).toInt(),
           'name': 'Maamaas App',
           'description':

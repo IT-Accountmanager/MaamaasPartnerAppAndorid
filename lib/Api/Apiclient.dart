@@ -10,32 +10,32 @@ typedef SessionExpiredHandler = Future<void> Function();
 
 class ApiClient {
   static const String subscription =
-      // "http://staging.maamaas.com:8080/subscription";
-      "https://backend.maamaas.com/subscription";
+      "http://staging.maamaas.com:8080/subscription";
+      // "https://backend.maamaas.com/subscription";
 
   static const String food_beverages =
-      // "http://staging.maamaas.com:8080/food";
-      "https://backend.maamaas.com/food";
+      "http://staging.maamaas.com:8080/food";
+      // "https://backend.maamaas.com/food";
 
   static const String notification =
-      // "http://staging.maamaas.com:8080/notify";
-      "https://backend.maamaas.com/notify";
+      "http://staging.maamaas.com:8080/notify";
+      // "https://backend.maamaas.com/notify";
 
   static const String catering =
-      // "http://staging.maamaas.com:8080/catering";
-      "https://backend.maamaas.com/catering";
+      "http://staging.maamaas.com:8080/catering";
+      // "https://backend.maamaas.com/catering";
 
   static const String delivery =
-      // "http://staging.maamaas.com:8080/delivery";
-      "https://backend.maamaas.com/delivery";
+      "http://staging.maamaas.com:8080/delivery";
+      // "https://backend.maamaas.com/delivery";
 
   static const String grocery =
-      "https://backend.maamaas.com/groceries";
-  // "http://staging.maamaas.com:8080/groceries";
+      // "https://backend.maamaas.com/groceries";
+  "http://staging.maamaas.com:8080/groceries";
 
   static const String promotions =
-      "https://backend.maamaas.com/promotions";
-  // "http://staging.maamaas.com:8080/promotions";
+      // "https://backend.maamaas.com/promotions";
+  "http://staging.maamaas.com:8080/promotions";
 
   static SessionExpiredHandler? onSessionExpired;
 

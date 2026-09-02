@@ -9,8 +9,8 @@ class subscription_authservice {
   static const _secureStorage = FlutterSecureStorage();
 
   static const String subscription =
-      // "http://staging.maamaas.com:8080/subscription";
-  "https://backend.maamaas.com/subscription";
+      "http://staging.maamaas.com:8080/subscription";
+  // "https://backend.maamaas.com/subscription";
 
   static Future<bool> refreshToken() async {
     try {
